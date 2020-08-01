@@ -1,15 +1,10 @@
 package com.adpth.calculator
 
-import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
-import android.widget.Switch
 import androidx.databinding.DataBindingUtil
 import com.adpth.calculator.databinding.ActivityMainBinding
-import java.lang.StringBuilder
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,13 +13,9 @@ class MainActivity : AppCompatActivity() {
     private var value1:Double = 0.0
     private var value2:Double = 0.0
     private var result :Double = 0.0
-    private lateinit var stringBuilder: StringBuilder
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       // setContentView(R.layout.activity_main)
-
-        stringBuilder = StringBuilder()
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
         binding.btn0.setOnClickListener { btn_click(binding.btn0) }
@@ -39,10 +30,8 @@ class MainActivity : AppCompatActivity() {
         binding.btn9.setOnClickListener { btn_click(binding.btn9) }
         binding.btnDecimal.setOnClickListener { btn_click(binding.btnDecimal) }
 
-
         binding.btnClear.setOnClickListener{btn_click(binding.btnClear)}
         binding.btnDel.setOnClickListener{btn_click(binding.btnDel)}
-
 
         binding.btnAdd.setOnClickListener { btn_operation(binding.btnAdd) }
         binding.btnMinus.setOnClickListener { btn_operation(binding.btnMinus) }
@@ -54,59 +43,49 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    var numberclk = false
     fun btn_click(visible:View) {
 
+        numberclk = true
         var value =binding.Output.text.toString()
 
         when(visible.id){
 
             binding.btn0.id -> {
                value += "0"
-                stringBuilder.append("0")
             }
             binding.btn1.id -> {
                 value += "1"
-                stringBuilder.append("1")
             }
             binding.btn2.id -> {
                 value += "2"
-                stringBuilder.append("2")
             }
             binding.btn3.id -> {
                 value += "3"
-                stringBuilder.append("3")
             }
             binding.btn4.id -> {
                 value += "4"
-                stringBuilder.append("4")
             }
             binding.btn5.id -> {
                 value += "5"
-                stringBuilder.append("5")
             }
             binding.btn6.id -> {
                 value += "6"
-                stringBuilder.append("6")
             }
             binding.btn7.id -> {
                 value += "7"
-                stringBuilder.append("7")
             }
             binding.btn8.id -> {
                 value += "8"
-                stringBuilder.append("8")
             }
             binding.btn9.id -> {
                 value += "9"
-                stringBuilder.append("9")
             }
             binding.btnDecimal.id -> {
                 value += "."
-                stringBuilder.append(".")
             }
             binding.btnClear.id -> {
                  value = ""
-                 stringBuilder.clear()
             }
             binding.btnDel.id -> {
                 value = binding.Output.text.toString()
@@ -117,35 +96,40 @@ class MainActivity : AppCompatActivity() {
 
         }
         binding.Output.setText(value)
-
-       // stringBuilder.append(value)
-        binding.ResultOperation.text = stringBuilder
     }
 
     fun btn_operation(visible:View) {
 
            when(visible.id) {
-               binding.btnAdd.id -> {operator = "+"}
-               binding.btnMinus.id -> {operator = "-"}
-               binding.btnDiv.id -> {operator = "/"}
-               binding.btnPercentage.id -> {operator = "%"}
-               binding.btnMul.id -> {operator = "*"}
-
+               binding.btnAdd.id -> {
+                   operator = "+"
+               }
+               binding.btnMinus.id -> {
+                   operator = "-"
+               }
+               binding.btnDiv.id -> {
+                   operator = "/"
+               }
+               binding.btnPercentage.id -> {
+                   operator = "%"
+               }
+               binding.btnMul.id -> {
+                   operator = "*"
+               }
           }
 
-        val value = binding.Output.text.toString()
-        value1 = value.toDouble()
+         val value = binding.Output.text.toString()
+         if (numberclk){
+             value1 = value.toDouble()
+         }
+        numberclk = false
+        binding.Output.setText("")
 
-        binding.Output.text.clear()
-
-        stringBuilder.append(operator)
-        //stringBuilder.append(operator)
-        binding.ResultOperation.text = stringBuilder
     }
 
     fun btn_result(){
 
-        var value = binding.Output.text.toString()
+        val value = binding.Output.text.toString()
         value2 = value.toDouble()
 
         when(operator){
@@ -166,9 +150,6 @@ class MainActivity : AppCompatActivity() {
                 result = value1 * value2
             }
         }
-
         binding.Output.setText(result.toString())
-        stringBuilder.append(" = ")
-        stringBuilder.append(result)
     }
 }

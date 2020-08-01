@@ -6,86 +6,42 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/backgroundcolor"
+        android:background="@color/background_color"
         tools:context=".MainActivity">
 
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardView_output"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            app:cardBackgroundColor="@color/cardbackground"
-            app:cardCornerRadius="8dp"
-            app:cardPreventCornerOverlap="true"
-            app:cardUseCompatPadding="true"
+            android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toTopOf="@+id/cardView_input"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintStart_toStartOf="parent">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/Output"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:background="@color/background_color"
+                android:ems="10"
+                android:gravity="end"
+                android:singleLine="true"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textIsSelectable="true"
+                android:textSize="55sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-                <EditText
-                    android:id="@+id/Output"
-                    android:layout_width="0dp"
-                    android:layout_height="70dp"
-                    android:background="@color/backgroundcolor"
-                    android:ems="10"
-                    android:gravity="end"
-                    android:inputType="textPersonName"
-                    android:singleLine="true"
-                    android:textAlignment="textEnd"
-                    android:textColor="@color/white"
-                    android:textSize="50dp"
-                    app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/constraintLayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                    <TextView
-                        android:id="@+id/Result_operation"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:background="@color/backgroundcolor"
-                        android:gravity="end"
-                        android:textSize="20dp"
-                        android:textAlignment="textEnd"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="parent" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginBottom="8dp"
-            app:cardBackgroundColor="@color/cardbackground"
+            app:cardBackgroundColor="@color/card_background"
             app:cardPreventCornerOverlap="true"
             app:cardUseCompatPadding="true"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -103,9 +59,8 @@
                     android:layout_height="100dp"
                     android:background="@color/button_text"
                     android:text="@string/clear_entire"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_del"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -120,10 +75,13 @@
                     android:background="@color/button_text"
                     android:drawableLeft="@drawable/div"
                     android:paddingLeft="35dp"
+                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toStartOf="@+id/btn_percentage"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_del"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:drawableStart="@drawable/div"
+                    android:paddingStart="35dp" />
 
                 <Button
                     android:id="@+id/btn_del"
@@ -133,7 +91,7 @@
                     android:layout_marginLeft="3dp"
                     android:background="@color/button_text"
                     android:text="@string/delete"
-                    android:textSize="25dp"
+                    android:textSize="25sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_div"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_clear"
@@ -146,7 +104,7 @@
                     android:layout_marginTop="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_7"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_8"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -160,7 +118,7 @@
                     android:layout_marginLeft="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_8"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_9"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_7"
@@ -176,7 +134,7 @@
                     android:layout_marginRight="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_9"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_mul"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_8"
@@ -186,13 +144,16 @@
                     android:id="@+id/btn_mul"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:background="@color/buttoncolor"
+                    android:background="@color/button_color"
                     android:drawableLeft="@drawable/multiply"
-                    android:paddingLeft="33dp"
+                    android:paddingLeft="33sp"
+                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_9"
-                    app:layout_constraintTop_toTopOf="@+id/btn_9" />
+                    app:layout_constraintTop_toTopOf="@+id/btn_9"
+                    android:paddingStart="33sp"
+                    android:drawableStart="@drawable/multiply" />
 
                 <Button
                     android:id="@+id/btn_4"
@@ -201,7 +162,7 @@
                     android:layout_marginTop="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_4"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_5"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -215,7 +176,7 @@
                     android:layout_marginLeft="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_5"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_6"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_4"
@@ -231,7 +192,7 @@
                     android:layout_marginRight="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_6"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_minus"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_5"
@@ -241,13 +202,16 @@
                     android:id="@+id/btn_minus"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:background="@color/buttoncolor"
+                    android:background="@color/button_color"
                     android:drawableLeft="@drawable/subtract"
-                    android:paddingLeft="31dp"
+                    android:paddingLeft="31sp"
+                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_6"
-                    app:layout_constraintTop_toTopOf="@+id/btn_6" />
+                    app:layout_constraintTop_toTopOf="@+id/btn_6"
+                    android:drawableStart="@drawable/subtract"
+                    android:paddingStart="31sp" />
 
                 <Button
                     android:id="@+id/btn_1"
@@ -256,7 +220,7 @@
                     android:layout_marginTop="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_1"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_2"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
@@ -272,7 +236,7 @@
                     android:layout_marginRight="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_2"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_3"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_1"
@@ -286,7 +250,7 @@
                     android:layout_marginRight="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_3"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintEnd_toStartOf="@+id/btn_add"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_2"
@@ -296,13 +260,16 @@
                     android:id="@+id/btn_add"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:background="@color/buttoncolor"
+                    android:background="@color/button_color"
                     android:drawableLeft="@drawable/ic_add"
                     android:paddingLeft="31dp"
+                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_3"
-                    app:layout_constraintTop_toTopOf="@+id/btn_3" />
+                    app:layout_constraintTop_toTopOf="@+id/btn_3"
+                    android:paddingStart="31dp"
+                    android:drawableStart="@drawable/ic_add" />
 
                 <Button
                     android:id="@+id/btn_0"
@@ -313,7 +280,7 @@
                     android:layout_marginRight="3dp"
                     android:background="@color/button_text"
                     android:text="@string/_0"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/btn_decimal"
                     app:layout_constraintStart_toStartOf="parent"
@@ -325,7 +292,7 @@
                     android:layout_height="95dp"
                     android:background="@color/button_text"
                     android:text="@string/_dot"
-                    android:textSize="30dp"
+                    android:textSize="30sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/btn_3"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -337,25 +304,30 @@
                     android:id="@+id/btn_result"
                     android:layout_width="0dp"
                     android:layout_height="95dp"
-                    android:background="@color/buttoncolor"
+                    android:background="@color/button_color"
                     android:drawableLeft="@drawable/equal_sign"
                     android:paddingLeft="32dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/btn_add"
-                    app:layout_constraintTop_toTopOf="@+id/btn_decimal" />
+                    app:layout_constraintTop_toTopOf="@+id/btn_decimal"
+                    android:drawableStart="@drawable/equal_sign"
+                    tools:ignore="RtlSymmetry"
+                    android:paddingStart="32dp" />
 
                 <Button
                     android:id="@+id/btn_percentage"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
-                    android:background="@color/buttoncolor"
+                    android:background="@color/button_color"
                     android:drawableLeft="@drawable/percentage"
                     android:paddingLeft="33dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_div"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:paddingStart="33dp"
+                    tools:ignore="RtlSymmetry"
+                    android:drawableStart="@drawable/percentage" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
