@@ -8,15 +8,15 @@ import com.adpth.calculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding :ActivityMainBinding
-    private var operator: String =""
-    private var value1:Double = 0.0
-    private var value2:Double = 0.0
-    private var result :Double = 0.0
+    private lateinit var binding: ActivityMainBinding
+    private var operator: String = ""
+    private var value1: Double = 0.0
+    private var value2: Double = 0.0
+    private var result: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         binding.btn0.setOnClickListener { btn_click(binding.btn0) }
         binding.btn1.setOnClickListener { btn_click(binding.btn1) }
@@ -30,8 +30,8 @@ class MainActivity : AppCompatActivity() {
         binding.btn9.setOnClickListener { btn_click(binding.btn9) }
         binding.btnDecimal.setOnClickListener { btn_click(binding.btnDecimal) }
 
-        binding.btnClear.setOnClickListener{btn_click(binding.btnClear)}
-        binding.btnDel.setOnClickListener{btn_click(binding.btnDel)}
+        binding.btnClear.setOnClickListener { btn_click(binding.btnClear) }
+        binding.btnDel.setOnClickListener { btn_click(binding.btnDel) }
 
         binding.btnAdd.setOnClickListener { btn_operation(binding.btnAdd) }
         binding.btnMinus.setOnClickListener { btn_operation(binding.btnMinus) }
@@ -39,20 +39,20 @@ class MainActivity : AppCompatActivity() {
         binding.btnMul.setOnClickListener { btn_operation(binding.btnMul) }
         binding.btnDiv.setOnClickListener { btn_operation(binding.btnDiv) }
 
-        binding.btnResult.setOnClickListener{btn_result()}
+        binding.btnResult.setOnClickListener { btn_result() }
 
     }
 
     var numberclk = false
-    fun btn_click(visible:View) {
+    fun btn_click(visible: View) {
 
         numberclk = true
-        var value =binding.Output.text.toString()
+        var value = binding.Output.text.toString()
 
-        when(visible.id){
+        when (visible.id) {
 
             binding.btn0.id -> {
-               value += "0"
+                value += "0"
             }
             binding.btn1.id -> {
                 value += "1"
@@ -85,12 +85,12 @@ class MainActivity : AppCompatActivity() {
                 value += "."
             }
             binding.btnClear.id -> {
-                 value = ""
+                value = ""
             }
             binding.btnDel.id -> {
                 value = binding.Output.text.toString()
-                if(value.length>0) {
-                    value = value.substring(0,value.length-1)
+                if (value.length > 0) {
+                    value = value.substring(0, value.length - 1)
                 }
             }
 
@@ -98,41 +98,41 @@ class MainActivity : AppCompatActivity() {
         binding.Output.setText(value)
     }
 
-    fun btn_operation(visible:View) {
+    fun btn_operation(visible: View) {
 
-           when(visible.id) {
-               binding.btnAdd.id -> {
-                   operator = "+"
-               }
-               binding.btnMinus.id -> {
-                   operator = "-"
-               }
-               binding.btnDiv.id -> {
-                   operator = "/"
-               }
-               binding.btnPercentage.id -> {
-                   operator = "%"
-               }
-               binding.btnMul.id -> {
-                   operator = "*"
-               }
-          }
+        when (visible.id) {
+            binding.btnAdd.id -> {
+                operator = "+"
+            }
+            binding.btnMinus.id -> {
+                operator = "-"
+            }
+            binding.btnDiv.id -> {
+                operator = "/"
+            }
+            binding.btnPercentage.id -> {
+                operator = "%"
+            }
+            binding.btnMul.id -> {
+                operator = "*"
+            }
+        }
 
-         val value = binding.Output.text.toString()
-         if (numberclk){
-             value1 = value.toDouble()
-         }
+        val value = binding.Output.text.toString()
+        if (numberclk) {
+            value1 = value.toDouble()
+        }
         numberclk = false
         binding.Output.setText("")
 
     }
 
-    fun btn_result(){
+    fun btn_result() {
 
         val value = binding.Output.text.toString()
         value2 = value.toDouble()
 
-        when(operator){
+        when (operator) {
 
             "+" -> {
                 result = value1 + value2

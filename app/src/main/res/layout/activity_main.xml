@@ -73,15 +73,15 @@
                     android:layout_marginEnd="3dp"
                     android:layout_marginRight="3dp"
                     android:background="@color/button_text"
+                    android:drawableStart="@drawable/div"
                     android:drawableLeft="@drawable/div"
+                    android:paddingStart="35dp"
                     android:paddingLeft="35dp"
-                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toStartOf="@+id/btn_percentage"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_del"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:drawableStart="@drawable/div"
-                    android:paddingStart="35dp" />
+                    tools:ignore="RtlSymmetry" />
 
                 <Button
                     android:id="@+id/btn_del"
@@ -145,15 +145,15 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:background="@color/button_color"
+                    android:drawableStart="@drawable/multiply"
                     android:drawableLeft="@drawable/multiply"
+                    android:paddingStart="33sp"
                     android:paddingLeft="33sp"
-                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_9"
                     app:layout_constraintTop_toTopOf="@+id/btn_9"
-                    android:paddingStart="33sp"
-                    android:drawableStart="@drawable/multiply" />
+                    tools:ignore="RtlSymmetry" />
 
                 <Button
                     android:id="@+id/btn_4"
@@ -203,15 +203,15 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:background="@color/button_color"
+                    android:drawableStart="@drawable/subtract"
                     android:drawableLeft="@drawable/subtract"
+                    android:paddingStart="31sp"
                     android:paddingLeft="31sp"
-                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_6"
                     app:layout_constraintTop_toTopOf="@+id/btn_6"
-                    android:drawableStart="@drawable/subtract"
-                    android:paddingStart="31sp" />
+                    tools:ignore="RtlSymmetry" />
 
                 <Button
                     android:id="@+id/btn_1"
@@ -261,15 +261,15 @@
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:background="@color/button_color"
+                    android:drawableStart="@drawable/ic_add"
                     android:drawableLeft="@drawable/ic_add"
+                    android:paddingStart="31dp"
                     android:paddingLeft="31dp"
-                    tools:ignore="RtlSymmetry"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/btn_3"
                     app:layout_constraintTop_toTopOf="@+id/btn_3"
-                    android:paddingStart="31dp"
-                    android:drawableStart="@drawable/ic_add" />
+                    tools:ignore="RtlSymmetry" />
 
                 <Button
                     android:id="@+id/btn_0"
@@ -305,29 +305,29 @@
                     android:layout_width="0dp"
                     android:layout_height="95dp"
                     android:background="@color/button_color"
+                    android:drawableStart="@drawable/equal_sign"
                     android:drawableLeft="@drawable/equal_sign"
+                    android:paddingStart="32dp"
                     android:paddingLeft="32dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/btn_add"
                     app:layout_constraintTop_toTopOf="@+id/btn_decimal"
-                    android:drawableStart="@drawable/equal_sign"
-                    tools:ignore="RtlSymmetry"
-                    android:paddingStart="32dp" />
+                    tools:ignore="RtlSymmetry" />
 
                 <Button
                     android:id="@+id/btn_percentage"
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:background="@color/button_color"
+                    android:drawableStart="@drawable/percentage"
                     android:drawableLeft="@drawable/percentage"
+                    android:paddingStart="33dp"
                     android:paddingLeft="33dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@+id/btn_div"
                     app:layout_constraintTop_toTopOf="parent"
-                    android:paddingStart="33dp"
-                    tools:ignore="RtlSymmetry"
-                    android:drawableStart="@drawable/percentage" />
+                    tools:ignore="RtlSymmetry" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
