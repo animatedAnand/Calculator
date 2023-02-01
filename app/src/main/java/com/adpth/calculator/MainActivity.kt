@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        binding.btn0.setOnClickListener { btn_click(binding.btn0) }
+        binding.btn0.setOnClickListener { btn_click(binding.btn0)}
         binding.btn1.setOnClickListener { btn_click(binding.btn1) }
         binding.btn2.setOnClickListener { btn_click(binding.btn2) }
         binding.btn3.setOnClickListener { btn_click(binding.btn3) }
@@ -123,7 +123,7 @@ class MainActivity : AppCompatActivity() {
             value1 = value.toDouble()
         }
         numberclk = false
-        binding.Output.setText("")
+        binding.Output.setText(value + "\n" + operator +"\n")
 
     }
 
